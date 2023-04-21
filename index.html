@@ -1,0 +1,24 @@
+<html>
+    <div id="my_box_realtime" style= "background-color: red; position: absolute; right: 70; bottom: 70; min-width: 100px; min-height: 100px"></div>
+    <script type="text/javascript">
+      my_box = document.getElementById("my_box_realtime");
+      let x = 70;
+      let y = 70;
+      let start_moving = setInterval(move_diagonal,20);
+    
+      function move_diagonal(){
+          my_box.style.right = x + 'px';
+          my_box.style.bottom = y + 'px';
+
+          if (x <= 70 && y <= 70){
+              x--;
+              y--;   
+          }
+          if (x == 0 && y == 0){
+              clearInterval(start_moving);
+          }
+      }
+
+      
+    </script>
+</html>
